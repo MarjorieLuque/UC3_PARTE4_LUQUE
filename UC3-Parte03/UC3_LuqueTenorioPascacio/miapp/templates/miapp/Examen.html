@@ -1,0 +1,26 @@
+<!-- En tu archivo examen.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen - {{ title }}</title>
+</head>
+<body>
+    <header>
+        <!-- Logo, menú, etc. -->
+    </header>
+    <main>
+        <h1>Información del Examen</h1>
+        
+        {% for estudiante in estudiantes %}
+            <h2>{{ estudiante.nombre }}</h2>
+            <p>GitHub: <a href="{{ estudiante.github }}" target="_blank">{{ estudiante.github }}</a></p>
+        {% endfor %}
+        
+    </main>
+    <footer>
+        <!-- Pie de página -->
+    </footer>
+</body>
+</html>
