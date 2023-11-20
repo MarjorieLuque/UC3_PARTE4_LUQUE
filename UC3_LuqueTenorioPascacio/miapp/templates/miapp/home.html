@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img.center {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+     {% load static %}
+</head>
+<body>
+    <header>
+        <!-- Logo de la UNTELS centrado -->
+        <img src="imagen/untels_logo.png" alt="UNTELS Logo" class="center">
+    </header>
+    <main>
+        <h1>Bienvenido a {{ title }}</h1>
+        <ul>
+            <li>Gestion de Base de Datos</li>
+            <li>Lenguaje de Programacion I</li>
+            <li>Lenguaje de Programacion II</li>
+            <li>Lenguaje de Programacion III</li>
+            <li>Investigacion Operativa I</li>
+            <li>Base de Datos</li>
+        </ul>
+    </main>
+    <footer>
+        <!-- Pie de página -->
+        UNTELS - LP3 - Tus Apellidos - Fecha
+    </footer>
+</body>
+</html>
