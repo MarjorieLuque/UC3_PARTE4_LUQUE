@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+</head>
+<body>
+
+    <form id="primosForm">
+        <label for="a">a:</label>
+        <input type="number" id="a" name="a" value="1" required>
+
+        <label for="b">b:</label>
+        <input type="number" id="b" name="b" value="100" required>
+
+        <button type="submit">Mostrar Primos</button>
+    </form>
+
+    <div id="resultado">
+        
+    </div>
+
+    <script>
+        document.getElementById('primosForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+
+            if (a > b) {
+                [a, b] = [b, a];
+            }
+            mostrarResultados(a, b);
+        });
+
+        function mostrarResultados(a, b) {
+
+            var resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = '<h2>Primos [' + a + ', ' + b + ']</h2>';
+
+            resultadoDiv.innerHTML += '<p>Lista de Números Primos:</p>';
+            resultadoDiv.innerHTML += obtenerNumerosPrimos(a, b).join(', ');
+        }
+
+        function obtenerNumerosPrimos(a, b) {
+
+
+            var primos = [];
+
+            for (var i = a; i <= b; i++) {
+                if (esPrimo(i)) {
+                    primos.push(i);
+                }
+            }
+
+            return primos;
+        }
+
+        function esPrimo(num) {
+            for (var i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num !== 1;
+        }
+    </script>
+
+</body>
+</html>
